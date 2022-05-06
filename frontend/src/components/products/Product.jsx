@@ -16,9 +16,9 @@ const Container = styled.div `
 const Product = ({item}) => {
     return (
         <Container>
-            <Card>
-                <CardActionArea>
-                    <CardMedia src = {item.img}
+            <Card sx={'width: 410px'}>
+                <CardActionArea >
+                    <CardMedia  src = {item.img}
                         component="img"
                         height=""
                         alt="balloons"

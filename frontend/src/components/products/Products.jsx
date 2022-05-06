@@ -4,9 +4,10 @@ import Product from "./Product";
 
 const Wrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    padding: 20px;   
+    padding: 20px 0;   
 `
 
 const Products = () => {
@@ -15,7 +16,9 @@ const Products = () => {
            {popularProducts.map(item=>(
                <Product item={item} key={item.id}/>
            ))}
+
        </Wrapper>
+
     );
 }
 

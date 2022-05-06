@@ -48,5 +48,33 @@ export const popularProducts = [
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quod.",
     },
 
+    {
+        id:5,
+        img: "https://nymart.ru/wa-data/public/shop/products/51/94/239451/images/701907/tmp_image.750x0.jpg",
+        title: "Lorem ipsum.RED2",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quod.",
+    },
+
+    {
+        id:6,
+        img: "https://nymart.ru/wa-data/public/shop/products/51/94/239451/images/701907/tmp_image.750x0.jpg",
+        title: "Lorem ipsum.RED2",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quod.",
+    },
+
+    {
+        id:7,
+        img: "https://nymart.ru/wa-data/public/shop/products/51/94/239451/images/701907/tmp_image.750x0.jpg",
+        title: "Lorem ipsum.RED2",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quod.",
+    },
+
+    {
+        id:8,
+        img: "https://cdn2.static1-sima-land.com/items/3877214/0/700-nw.jpg",
+        title: "Lorem ipsum.BLUE",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quod.",
+    },
+
 ]
 
