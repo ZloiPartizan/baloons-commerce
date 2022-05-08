@@ -4,6 +4,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import Button from '@mui/material/Button';
 import {useState} from "react";
 import {sliderItems} from "../../data";
+import { Link } from "react-router-dom"
 
 const Container = styled.div `       
         width: 100%;
@@ -97,7 +98,7 @@ const Slider = () => {
                     <InfoContainer>
                         <Tittle>{item.title}</Tittle>
                         <Desc><p>{item.desc}</p></Desc>
-                        <Button variant="outlined">Show all</Button>
+                      <Link to={`/productList`}> <Button variant="outlined">Show all</Button></Link>
                     </InfoContainer>
                 </Slide>
                 ))}

@@ -1,23 +1,21 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-require('dotenv').config()
-
-const cartSchema = new mongoose.Schema({
-    userId: {type: String, required: true, },
-    products: [
-        {
-            productId: {
-                type: String,
+const CartSchema = new mongoose.Schema(
+    {
+        userId: { type: String, required: true },
+        products: [
+            {
+                productId: {
+                    type: String,
+                },
+                quantity: {
+                    type: Number,
+                    default: 1,
+                },
             },
-            quantity: {
-                type: Namber,
-                default: 1,
-            }
-        }
-    ],
-}, {timestamps: true}
-)
+        ],
+    },
+    { timestamps: true }
+);
 
-const Cart = mongoose.model("User", cartSchema)
-
-exports.Cart = Cart
+module.exports = mongoose.model("Cart", CartSchema);

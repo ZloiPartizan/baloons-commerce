@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 import Badge from "@mui/material/Badge";
+import {Link} from "react-router-dom";
+
 
 const Navbar = () => {
 
@@ -41,10 +43,11 @@ const Navbar = () => {
     cursor: pointer;
     `
 
+
     return (
         <Container>
             <Wrapper>
-                <Left><Logo>BALOON'S.</Logo></Left>
+                <Link to={`/`}>  <Left><Logo>BALOON'S.</Logo></Left></Link>
                 <Center></Center>
                 <Right>
                    <MenuItem>
