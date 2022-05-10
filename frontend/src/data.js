@@ -22,6 +22,27 @@ export const sliderItems = [
     },
 ]
 
+export const categories = [
+    {
+        id: 1,
+        img: "https://balloondelivery.ru/images/catalog/00598-F.jpg",
+        title: "Glyanec balloons",
+        cat:"Glyanec"
+    },
+    {
+        id: 2,
+        img: "https://mahachkala.allithave.ru/image/product-images/2021/10/02/10/49/1498061_0.jpg",
+        title: "Classic balloons",
+        cat:"Classic"
+    },
+    {
+        id: 3,
+        img: "https://moon-balloon.ru/wp-content/uploads/2020/03/%D0%A8%D0%B0%D1%80%D1%8B-%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BB%D0%BE%D1%87%D0%BA%D0%B0%D1%85-%D0%9B%D1%8F%D0%B3%D1%83%D1%88%D0%BA%D0%B8-6-%D1%88%D1%82%D1%83%D0%BA.jpg",
+        title: "Picture balloons",
+        cat:"Picture"
+    }
+]
+
 export const popularProducts = [
     {
         id:1,

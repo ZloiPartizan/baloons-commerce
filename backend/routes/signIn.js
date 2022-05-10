@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const User = require('../models/User')
 const CryptoJS = require('crypto-js')
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken")
 
 router.post('/', async (req, res) => {
     try{
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
         );
 
         const { password, ...others } = user._doc
-        res.status(200).json({...others, accessToken});
+        res.status(200).json({...others, accessToken})
 
     } catch (err) {
         res.status(500).json(err)

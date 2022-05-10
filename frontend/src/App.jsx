@@ -19,7 +19,7 @@ function App () {
         <Router>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/productList" element={<ProductList/>}/>
+                <Route path="/products/:category" element={<ProductList/>}/>
                 <Route path="/product/:id" element={<Product/>}/>
                 <Route path="/login" element={user ? <Navigate to="/" /> : <Login />}/>
                 <Route path="/register" element= {user ? <Navigate to="/" /> : <Register />}/>

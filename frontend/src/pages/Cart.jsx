@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import Announcement from "../components/announcement/Announcement";
 import Navbar from "../components/navbar/Navbar";
@@ -6,6 +6,7 @@ import Footer from "../components/footer/Footer";
 import Button from "@mui/material/Button";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useSelector } from "react-redux";
 
 const Container = styled.div ``
 const Wrapper = styled.div `
@@ -39,7 +40,7 @@ const  Summary = styled.div`
     border: 0.5px solid lightgray;
     border-radius: 10px;
     padding: 20px;
-    height: 50vh;`
+   `
 
 const  Product = styled.div`
     display: flex;
@@ -72,7 +73,7 @@ const  PriceDetails = styled.span`
     align-items: center;
     justify-content: center;`
 
-const  ProducAmaountContainer = styled.div`
+const  ProductAmaountContainer = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 20px;`
@@ -97,6 +98,8 @@ const  SummaryItemText = styled.span``
 const  SummaryItemPrice = styled.span``
 
 const Cart = () => {
+    const cart = useSelector((state) => state.cart);
+
     return (
         <Container>
             <Announcement/>
@@ -115,84 +118,40 @@ const Cart = () => {
                 </Top>
                 <Bottom>
                     <Info>
-                        <Product>
+                        {cart.products.map((product) => (  <Product>
                             <ProductDetails>
-                                <Image src="https://festshop.ru/wp-content/uploads/2019/06/lavender-260.jpg"/>
+                                <Image src={product.img}/>
                                 <Details>
                                     <ProductName>
-                                        <b>Product:</b>
-                                        Common BALOON
+                                        <b>Product:</b> {product.title}
                                     </ProductName>
                                     <ProductId>
-                                        <b>ID:</b>
-                                        12345678
+                                        <b>ID:</b> {product._id}
                                     </ProductId>
-                                    <ProductColor color="pink"/>
+                                    <ProductColor color={product.color}/>
                                     <ProductSize>
-                                        <b>Size:</b>
-                                        Small
+                                        <b>Size:</b>{product.size}
                                     </ProductSize>
                                 </Details>
                             </ProductDetails>
                             <PriceDetails>
-                                <ProducAmaountContainer>
-                                    <AddIcon/>
-                                    <ProductAmount>2</ProductAmount>
-                                    <RemoveIcon/>
-                                </ProducAmaountContainer>
-                                <ProductPrice>$ 5</ProductPrice>
+                                <ProductAmaountContainer>
+                                    <AddIcon />
+                                    <ProductAmount>{product.quantity}</ProductAmount>
+                                    <RemoveIcon />
+                                </ProductAmaountContainer>
+                                <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
                             </PriceDetails>
                         </Product>
-                        <hr/>
-                        <Product>
-                            <ProductDetails>
-                                <Image src="https://festshop.ru/wp-content/uploads/2019/06/lavender-260.jpg"/>
-                                <Details>
-                                    <ProductName>
-                                        <b>Product:</b>
-                                        Common BALOON
-                                    </ProductName>
-                                    <ProductId>
-                                        <b>ID:</b>
-                                        12345678
-                                    </ProductId>
-                                    <ProductColor color="pink"/>
-                                    <ProductSize>
-                                        <b>Size:</b>
-                                        Small
-                                    </ProductSize>
-                                </Details>
-                            </ProductDetails>
-                            <PriceDetails>
-                                <ProducAmaountContainer>
-                                    <AddIcon/>
-                                    <ProductAmount>2</ProductAmount>
-                                    <RemoveIcon/>
-                                </ProducAmaountContainer>
-                                <ProductPrice>$ 5</ProductPrice>
-                            </PriceDetails>
-                        </Product>
+                        )) }
+
                     </Info>
                     <Summary>
                         <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-                        <SummaryItem>
-                            <SummaryItemText>Subtotal</SummaryItemText>
-                            <SummaryItemPrice>10 $</SummaryItemPrice>
-                        </SummaryItem>
-
-                        <SummaryItem>
-                            <SummaryItemText>Estimated Shipping</SummaryItemText>
-                            <SummaryItemPrice>10 $</SummaryItemPrice>
-                        </SummaryItem>
-
-                        <SummaryItem>
-                            <SummaryItemText>Shipping Discount</SummaryItemText>
-                            <SummaryItemPrice>-5.90 $</SummaryItemPrice>
-                        </SummaryItem>
 
                         <SummaryItem  type="total">
                             <SummaryItemText>Total</SummaryItemText>
-                            <SummaryItemPrice>10 $</SummaryItemPrice>
+                            <SummaryItemPrice>{cart.total} $</SummaryItemPrice>
                         </SummaryItem>
                         <Button variant="outlined">CHECKOUT NOW</Button>
                     </Summary>

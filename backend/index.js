@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const userRoute = require('./routes/user')
 const signUpRoute = require('./routes/signUp')
 const signInRoute = require('./routes/signIn')
-const productRoute = require("./routes/product");
-const cartRoute = require("./routes/cart");
-const orderRoute = require("./routes/order");
-const stripeRoute = require("./routes/stripe");
-const cors = require("cors");
+const productRoute = require("./routes/product")
+const cartRoute = require("./routes/cart")
+const orderRoute = require("./routes/order")
+const stripeRoute = require("./routes/stripe")
+const cors = require("cors")
 
 require ('dotenv').config()
 
@@ -18,10 +18,10 @@ app.use(express.json())
 app.use('/api/users', userRoute)
 app.use('/api/signup', signUpRoute)
 app.use('/api/signin', signInRoute)
-app.use("/api/products", productRoute);
-app.use("/api/carts", cartRoute);
-app.use("/api/orders", orderRoute);
-app.use("/api/checkout", stripeRoute);
+app.use("/api/products", productRoute)
+app.use("/api/carts", cartRoute)
+app.use("/api/orders", orderRoute)
+app.use("/api/checkout", stripeRoute)
 
 app.get('/', (req, res) => {
     res.send('Welcome to our todos api')

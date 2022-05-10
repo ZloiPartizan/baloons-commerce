@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import {CardActionArea} from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import SearchIcon from '@mui/icons-material/Search';
+import {Link} from "react-router-dom";
 
 const Container = styled.div `       
         margin: 20px;    
@@ -16,6 +17,7 @@ const Container = styled.div `
 const Product = ({item}) => {
     return (
         <Container>
+            <Link to={`/product/${item._id}`}>
             <Card sx={'width: 410px'}>
                 <CardActionArea >
                     <CardMedia  src = {item.img}
@@ -34,9 +36,11 @@ const Product = ({item}) => {
                 </CardActionArea>
                 <CardActions>
 
+
                     <Button size="big" color="primary">
                         share...
                     </Button>
+
                     <Button size="big" color="primary">
                         <SearchIcon/>
                     </Button>
@@ -46,6 +50,7 @@ const Product = ({item}) => {
 
                 </CardActions>
             </Card>
+            </Link>
         </Container>
     );
 };
